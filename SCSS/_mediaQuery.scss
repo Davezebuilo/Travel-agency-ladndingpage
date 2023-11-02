@@ -1,0 +1,612 @@
+@mixin mediaQuery($args...){
+    @if length($args)==1{
+        @media screen and (max-width: nth($args, 1)){
+            @content;
+        }
+    }
+    
+    @if length($args)==2{
+        @media screen and (max-width: nth($args, 1)) and (min-width: nth($args, 2)){
+            @content;
+        }
+    }
+}
+
+
+// prefooter
+@mixin prefooter-m{
+    width: 100%;
+    height: 1050px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    >div{
+        width: 350px;
+
+        &:first-of-type{
+            height: 100px;
+        }
+    }
+}
+@mixin prefooter-i{
+    padding-inline: 40px;
+    width: 100%;
+    height: 650px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    place-items: center;
+
+    >div{
+        width: 200px;
+        height: 200px;
+        // background-color: aqua;
+
+        &:first-of-type{
+            height: 100px;
+        }
+    }
+}
+
+// Email
+@mixin email-m{
+    display: grid;
+    place-items: center;
+
+    p{
+        font-size: 20px;
+        font-weight: 100;
+        width: 330px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .email-in{
+        display: grid;
+        place-items: center;
+
+        input{
+            border-radius: 10px;
+        }
+
+        button{
+            padding: 10px 110px;
+            font-size: 14px;
+            border-radius: 8px;
+        }
+    }
+}
+@mixin email-i{
+    display: grid;
+    place-items: center;
+
+    p{
+        font-size: 25px;
+        font-weight: 100;
+        width: 800px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .email-in{
+        display: grid;
+        place-items: center;
+
+        input{
+            border-radius: 10px;
+        }
+
+        button{
+            padding: 10px 110px;
+            font-size: 14px;
+            border-radius: 8px;
+        }
+    }
+}
+
+// subscrb
+@mixin subscrb-m{
+    height: 600px;
+}
+
+// slider images
+@mixin sliderimegs-m{
+    padding-inline: 20px;
+    gap: 40px;
+
+    div{
+
+        &:nth-of-type(3),
+        &:nth-of-type(4),
+        &:nth-of-type(5),
+        &:nth-of-type(6){
+            display: none;
+        }
+    }
+}
+@mixin sliderimegs-i{
+    padding-inline: 40px;
+    gap: 40px;
+
+    div{
+
+        &:nth-of-type(5),
+        &:nth-of-type(6){
+            display: none;
+        }
+    }
+}
+
+// testimonl
+@mixin testimonl-m{
+    display: grid;
+    place-items: left;
+    padding-inline: 20px;
+    place-items: center;
+
+    .tst-txt{
+        p{
+            font-size: 14px;
+        }
+
+        h1{
+            width: 350px;
+            font-size: 35px;
+            font-weight: 600;
+        }
+    }
+
+    .tst-crds{
+        width: 350px;
+    }
+}
+@mixin testimonl-i{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: left;
+    padding-inline: 20px;
+    place-items: center;
+
+    .tst-txt{
+        p{
+            font-size: 14px;
+        }
+
+        h1{
+            width: 350px;
+            font-size: 35px;
+            font-weight: 600;
+        }
+    }
+
+    .tst-crds{
+        width: 350px;
+        height: 300px;
+    }
+}
+
+// trips
+@mixin trips-m{
+    padding-inline: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    height: 1000px;
+    gap: 10px;
+
+    .trips-lft{
+        margin-right: 0;
+
+        .tripstxt{
+
+            p{
+                font-size: 14px;
+            }
+
+            h1{
+                width: 350px;
+                font-size: 35px;
+            }
+        }
+
+        ul{
+            place-items: center;
+
+            li{
+
+                p{
+                    font-size: 16px;
+                    line-height: 20px;
+                    &:first-of-type,
+                    &:nth-of-type(3),
+                    &:nth-of-type(2){
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+
+    .tripcrd{
+        width: 330px;
+
+        .tripimg{
+            width: 300px;
+        }
+
+        >p{
+            width: 150px;
+            // background-color: aqua;
+        }
+
+        .sml-crd{
+            right: -6%;
+            bottom: 15%;
+        }
+
+        .trip-icons{
+            gap: 10px;
+        }
+    }
+
+}
+@mixin trips-i{
+    padding-inline: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    height: 500px;
+    gap: 10px;
+
+    .trips-lft{
+        margin-right: 0;
+
+        .tripstxt{
+
+            p{
+                font-size: 14px;
+            }
+
+            h1{
+                width: 350px;
+                font-size: 35px;
+            }
+        }
+
+        ul{
+            place-items: center;
+
+            li{
+
+                p{
+                    font-size: 16px;
+                    line-height: 20px;
+                    &:first-of-type,
+                    &:nth-of-type(3),
+                    &:nth-of-type(2){
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+
+    .tripcrd{
+        width: 300px;
+
+        .tripimg{
+            width: 270px;
+        }
+
+        >p{
+            width: 150px;
+            // background-color: aqua;
+        }
+
+        .sml-crd{
+            right: -6%;
+            bottom: 15%;
+        }
+
+        .trip-icons{
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+}
+
+// Destinate
+@mixin destinate-m{
+    height: 1350px;
+    padding-inline: 20px;
+
+    .dest-txt{
+
+        h1{
+            font-size: 30px;
+            font-weight: 400;
+            margin-top: 20px;
+        }
+    }
+
+    
+    .dest-crds{
+        display: grid;
+        place-items: center;
+        gap: 30px;
+        margin-top: 50px;
+
+        .crds{
+            width: 350px;
+        }
+    }
+}
+@mixin destinate-i{
+    height: 650px;
+    padding-inline: 40px;
+
+    .dest-txt{
+
+        h1{
+            font-size: 35px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+    }
+
+    
+    .dest-crds{
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 50px;
+
+        .crds{
+            width: 350px;
+
+            &:nth-child(3){
+                display: none;
+            }
+        }
+    }
+}
+
+// scnd-sect
+@mixin scnd-sect-m{
+    padding-inline: 20px;
+    height: 1350px;
+
+    .scndtxt{
+
+        p{
+            font-size: 14px;
+        }
+
+        h1{
+            font-size: 30px;
+            font-weight: 400;
+            margin-block: 20px;
+
+        }
+    }
+
+    .scnd-crds{
+        display: grid;
+        place-items: center;
+        margin-top: 20px;
+    }
+
+    .dots{
+        width: 70px;
+        height: 100px;
+        overflow: hidden;
+        right: 20px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+@mixin scnd-sect-i{
+    padding-inline: 40px;
+    height: 850px;
+
+    .scndtxt{
+
+        p{
+            font-size: 14px;
+        }
+
+        h1{
+            font-size: 35px;
+            font-weight: 600;
+            margin-block: 20px;
+
+        }
+    }
+
+    .scnd-crds{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        margin-top: 20px;
+    }
+
+    .dots{
+        width: 100px;
+        height: 130px;
+        overflow: hidden;
+        right: 40px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// frst-sect
+@mixin frst-sect-m{
+    height: 900px;
+    padding-inline: 20px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas: "Top-item" 
+    "Bottom-item";
+    margin-bottom: 40px;
+
+    .hero{
+        grid-row: 1/2;
+        grid-area: Top-item;
+
+        width: 300px;
+        height: 450px;
+        
+    }
+
+    .headtxt{
+        grid-row: 2/3;
+        grid-area: Bottom-item;
+
+        h5{
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        h1{
+            width: 300px;
+            font-size: 50px;
+        }
+
+        p{
+            width: 350px;
+            font-size: 14px;
+        }
+
+        .ctas{
+            gap: 20px;
+            margin-top: 20px;
+    
+            button{
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+    
+            >div{
+                gap: 10px;
+                font-size: 14px;
+    
+                >div{
+                    width: 40px;
+                    height: 40px;
+        
+                    i{
+                        font-size: 20px;
+                    }
+        
+                    &::before{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin frst-sect-i{
+    height: 600px;
+    padding-inline: 40px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 40px;
+
+    .hero{
+        width: 400px;
+        height: 550px;
+        
+    }
+
+    .headtxt{
+        h5{
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        h1{
+            width: 350px;
+            font-size: 60px;
+        }
+
+        p{
+            width: 350px;
+            font-size: 16px;
+            line-height: 30px;
+        }
+
+        .ctas{
+            gap: 30px;
+            margin-top: 20px;
+    
+            button{
+                padding: 15px 25px;
+                font-size: 14px;
+            }
+    
+            >div{
+                gap: 10px;
+                font-size: 14px;
+    
+                >div{
+                    width: 45px;
+                    height: 45px;
+        
+                    i{
+                        font-size: 20px;
+                    }
+        
+                    &::before{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Nav bar
+@mixin Navbar-m{
+    padding-inline: 20px;
+
+    .burgermenu{
+        display: block;
+    }
+
+    ul,
+    .btnsp{
+        display: none;
+    }
+}
+@mixin Navbar-i{
+    padding-inline: 40px;
+
+    .burgermenu{
+        display: block;
+    }
+
+    ul,
+    .btnsp{
+        display: none;
+    }
+}

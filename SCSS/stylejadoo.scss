@@ -1,0 +1,174 @@
+@import "./mixin";
+@import "./variables";
+@import "./base";
+@import "./mediaQuery";
+
+
+
+body{
+    width: 100%;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+nav{
+    @include Navbar($whteclr, $txtclr, $primaryclr);
+
+    .burgermenu{
+        @include Burgermenu;
+    }
+
+    // mediaQuery mobile view
+    @include mediaQuery(767px){
+        @include Navbar-m;
+    }
+
+    // mediaQuery Tablet view
+    @include mediaQuery(1024px, 768px){
+        @include Navbar-i;
+    }
+}
+
+.frst-sect{
+    @include frst-sect($txtclr, $primaryclr, $primaryclr-v);
+
+    // mediaQuery mobile view
+    @include mediaQuery(767px){
+        @include frst-sect-m;
+    }
+
+    // mediaQuery Tablet view
+    @include mediaQuery(1024px, 768px){
+        @include frst-sect-i;
+    }
+}
+
+.scnd-sect{
+    @include scnd-sect();
+
+    // mediaQuery mobile view
+    @include mediaQuery(767px){
+        @include scnd-sect-m;
+    }
+
+    // mediaQuery Tablet view
+    @include mediaQuery(1024px, 768px){
+        @include scnd-sect-i;
+    }
+}
+
+.destinate{
+    @include destinate;
+
+    // mediaQuery mobile view
+    @include mediaQuery(767px){
+        @include destinate-m;
+    }
+
+    // mediaQuery Tablet view
+    @include mediaQuery(1024px, 768px){
+        @include destinate-i;
+    }
+}
+
+.trips{
+    @include trips;
+
+    // mediaQuery mobile view
+    @include mediaQuery(767px){
+        @include trips-m;
+    }
+
+    // mediaQuery Tablet view
+    @include mediaQuery(1024px, 768px){
+        @include trips-i;
+    }
+}
+
+.tstimonl{
+    @include Testimonial;
+
+    // mediaQuery mobile view
+    @include mediaQuery(767px){
+        @include testimonl-m;
+    }
+
+    // mediaQuery Tablet view
+    @include mediaQuery(1024px, 768px){
+        @include testimonl-i;
+    }
+}
+
+.sliderimges{
+    @include sliderimages;
+
+    // mediaQuery mobile view
+    @include mediaQuery(767px){
+        @include sliderimegs-m;
+    }
+
+    // mediaQuery Tablet view
+    @include mediaQuery(1024px, 768px){
+        @include sliderimegs-i;
+    }
+}
+
+.subscrb{
+    width: 100%;
+    height: 600px;
+    background-color: $whteclr;
+    display: grid;
+    place-items: center;
+    position: relative;
+
+    // mediaQuery mobile view
+    @include mediaQuery(767px){
+        @include subscrb-m
+    }
+
+    .grided{
+        width: 100%;
+        height: 400px;
+        background-color: rgb(243, 243, 243);
+
+        @include Grided
+    }
+
+    .dotimg{
+        @include dotimg
+    }
+
+    .email{
+        @include email;
+
+        // mediaQuery mobile view
+        @include mediaQuery(767px){
+            @include email-m
+        }
+
+        // mediaQuery Tablet view
+    @include mediaQuery(1024px, 768px){
+        @include email-i;
+    }
+    }
+}
+
+.pre-ftr{
+    @include Pre-footer;
+
+    .footer{
+        @include footer;
+    }
+
+    // mediaQuery mobile view
+    @include mediaQuery(767px){
+        @include prefooter-m;
+    }
+
+    // mediaQuery Tablet view
+    @include mediaQuery(1024px, 768px){
+        @include prefooter-i;
+    }
+}
